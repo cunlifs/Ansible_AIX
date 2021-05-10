@@ -10,6 +10,10 @@
       register: oslevel_info
       when:
         - ansible_system == "AIX"
+        
+    - name: Show oslevel output
+      debug:
+        var: oslevel_info
       
     - name: Set os_level fact from registered output
       set_fact:
