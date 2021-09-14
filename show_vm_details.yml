@@ -31,10 +31,10 @@
         server_type: "{{item}}"
       with_items: "{{ansible_product_name}}"
 
-    - name: Collecting hosting server serial number for host {{ inventory_hostname }}
-      set_fact:
-        server_serial: "{{item}}"
-      with_items: "{{ansible_product_serial}}"
+#    - name: Collecting hosting server serial number for host {{ inventory_hostname }}
+#      set_fact:
+#        server_serial: "{{item}}"
+#      with_items: "{{ansible_product_serial}}"
     
     - name: Collecting default IP information for host {{ inventory_hostname }}
       set_fact:
@@ -43,7 +43,7 @@
 
     - name: Show VM host information from facts gathered in this playbook
       debug:
-        msg: "VM {{ inventory_hostname }} is running on server serial no:{{ server_serial }}, type:{{ server_type }}, processor:{{ proc_type}}"
+        msg: "VM {{ inventory_hostname }} is running on server type:{{ server_type }}, processor:{{ proc_type}}"
         
     - name: Show VM default IP information from data collected during gather facts
       debug:
