@@ -5,7 +5,7 @@
     state: "{{ item.user_state }}"
     name: "{{ item.user_name }}"
     change_passwd_on_login: False
-    password: as$12ndhkfjk$1c
+    password: "{{ 'password' | password_hash('sha512') }}"
     attributes:
       id: "{{ item.user_id}}"
   loop: "{{ users }}"
