@@ -2,7 +2,8 @@
 # Role to configure users defined in the vars/main.yml file
 - name: Ensure user condition is as expected
   ibm.power_aix.user:
-    state: "{{ item.user_state }}"
+ #   state: "{{ item.user_state }}"
+    state: absent
     name: "{{ item.user_name }}"
     change_passwd_on_login: False
     password: as$12ndhkfjk$1c
