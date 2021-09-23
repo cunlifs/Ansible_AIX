@@ -4,8 +4,8 @@
   ibm.power_aix.user:
     state: "{{ item.user_state }}"
     name: "{{ item.user_name }}"
-    change_passwd_on_login: False
-    password: "{{ 'password' | password_hash('sha512') }}"
+ #   change_passwd_on_login: False
+ #   password: "{{ 'password' | password_hash('sha512') }}"
     attributes:
       id: "{{ item.user_id}}"
   loop: "{{ users }}"
